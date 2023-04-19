@@ -1,9 +1,14 @@
-import React from 'react';
+import { Route, Routes } from "react-router-dom";
+import Layout from "./layout/Layout";
+import routes from "./routes";
 
 function App() {
   return (
-    <div>سلام خوبی
-    </div>
+    <Layout>
+      <Routes>
+        {routes.map((route, index) => <Route key={index} {...route} />)}
+      </Routes>
+    </Layout>
   );
 }
 
