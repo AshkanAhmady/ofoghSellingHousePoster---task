@@ -36,6 +36,24 @@
       "password": "$2a$10$0i69KS4TsLJsRC33TgY0bOwkszU9WxVa/SPlWXc8If/PTDdejg4hC",
       "confirmPassword": "taaest@gmail.com",
       "id": 6
+    },
+    {
+      "email": "s_admin@gmail.com",
+      "password": "$2a$10$xSBigWFrl4lOCS2mOI04xuTatB76dE0wfc7m3CC2.ia38mPSxQRdu",
+      "confirmPassword": "1111",
+      "id": 7
+    },
+    {
+      "email": "s_adddmin@gmail.com",
+      "password": "$2a$10$MvBAdTHTjL45ZkJdwt2tLeCfTG5QWGkz5nbcINHwlTERio3eSBl8m",
+      "confirmPassword": "1212",
+      "id": 8
+    },
+    {
+      "email": "s_admddin@gmail.com",
+      "password": "$2a$10$CbUUhU/8liBCLFiCK6tfxuZXwaUEljn975./jJZC.lrJJtGV1K9yu",
+      "confirmPassword": "1111",
+      "id": 9
     }
   ]
 }

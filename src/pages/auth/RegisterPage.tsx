@@ -2,6 +2,7 @@ import { useForm } from "react-hook-form";
 import * as Yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { RegisterHookFormType, RegisterDataType } from "../../types";
+import request from "../../Configs/request";
 
 const formSchema = Yup.object().shape({
     email: Yup.string()
@@ -17,15 +18,9 @@ const formSchema = Yup.object().shape({
 const RegisterPage = () => {
     const { register, handleSubmit, formState: { errors } }: RegisterHookFormType = useForm({ mode: "onTouched", resolver: yupResolver(formSchema) });
     const onSubmit = (data: RegisterDataType) => {
-        console.log(data)
-        // console.log("form data =>", formData)
-        // fetch('http://localhost:4000/users', {
-        //     method: 'POST',
-        //     headers: { 'Content-Type': 'application/json' },
-        //     body: JSON.stringify(formData)
-        // })
-        //     .then(res => console.log(res))
-        //     .then(data => console.log(data))
+        request.post("/users", data).then((res) => {
+            console.log(res)
+        })
     };
 
     return (
