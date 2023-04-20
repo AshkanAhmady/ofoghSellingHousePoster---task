@@ -12,8 +12,6 @@ const Header = () => {
 
   const location = useLocation()
 
-  console.log(location.pathname)
-
   return (
     <header className="bg-white shadow-md w-full">
       <nav className="flex justify-between p-4 max-w-screen-xl mx-auto">
