@@ -49,11 +49,10 @@ export interface UserType {
   userId: number;
   accessToken: string;
   email: string;
-  isLogedIn: boolean;
-  username: string;
+  userName: string;
 }
 
 export interface useUserActionsDispatchType {
-  type: string 
-  payload: UserType
+  type: string;
+  payload: UserType;
 }

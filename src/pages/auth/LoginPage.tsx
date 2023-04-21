@@ -6,6 +6,7 @@ import { userLogin } from "../../actions/authActions";
 import { useNavigate } from "react-router";
 import { useUserActions } from "../../context/authContext/UserProvider";
 import { toast } from "react-toastify";
+import { saveUserData } from "actions/actions";
 
 const formSchema = Yup.object().shape({
     email: Yup.string()
@@ -22,7 +23,7 @@ const LoginPage = () => {
     const onSubmit = (data: RegisterDataType) => {
         userLogin(data).then((data) => {
             toast.success("loged in successfully")
-            dispatch({ type: "SAVE_USER_DATA", payload: data });
+            dispatch(saveUserData(data));
             navigate("/")
         })
     };

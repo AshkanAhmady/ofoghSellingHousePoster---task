@@ -6,6 +6,7 @@ import { userRegister } from "../../actions/authActions";
 import { toast } from "react-toastify";
 import { useUserActions } from "../../context/authContext/UserProvider";
 import { useNavigate } from "react-router";
+import { saveUserData } from "actions/actions";
 
 const formSchema = Yup.object().shape({
     username: Yup.string()
@@ -25,12 +26,12 @@ const RegisterPage = () => {
     const dispatch: any = useUserActions()
     const navigate = useNavigate()
     const { register, handleSubmit, formState: { errors } }: RegisterHookFormType = useForm({ mode: "onTouched", resolver: yupResolver(formSchema) });
-    
+
     const onSubmit = (data: RegisterDataType) => {
         delete data['confirmPassword']
         userRegister(data).then((data) => {
             toast.success("registered successfully")
-            dispatch({ type: "SAVE_USER_DATA", payload: data });
+            dispatch(saveUserData(data))
             navigate("/")
         })
     };

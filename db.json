@@ -18,6 +18,12 @@
       "password": "$2a$10$.kuAOmKTbqe274vA39BwqOJwpIgiGyogz3/iBzgoKXCTG8HW81qe2",
       "username": "ashkan",
       "id": 3
+    },
+    {
+      "email": "yashar.zangbari@gmail.com",
+      "password": "$2a$10$zODQZ9hg4/Ryi7RMpXw9RubnYIk/AyqfJ1ywuoh.aRI29SB9KOZyS",
+      "username": "yashar",
+      "id": 4
     }
   ]
 }
