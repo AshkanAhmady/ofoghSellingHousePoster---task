@@ -2,58 +2,22 @@
   "posters": [],
   "users": [
     {
-      "email": "test@gmail.com",
-      "password": "123asdf",
-      "confirmPassword": "123asdf",
+      "email": "sdf@g.f",
+      "password": "$2a$10$xysPMHzQWc2DlKFc2Rgrv.c7LKwk0YO30NxkSPUf.LddjMOGAfzIi",
+      "username": "s_admin@gmail.com",
       "id": 1
     },
     {
-      "email": "test@gmail.com",
-      "password": "123asdf",
-      "confirmPassword": "123asdf",
+      "email": "ashkan@gmail.com",
+      "password": "$2a$10$qy9KaypbvfIZiI.BYq5l3ePR7kiEGqyXR6ch1xHMVDmb5.OoONP6W",
+      "username": "ashkan",
       "id": 2
     },
     {
-      "email": "tessst@gmail.com",
-      "password": "$2a$10$NUcRdwSq3GVGPVeSQGckDeksf9kmVM8wdVVc8N2NCvNYRIKYqw7WS",
-      "confirmPassword": "12345678",
+      "email": "ashkadn@gmail.com",
+      "password": "$2a$10$.kuAOmKTbqe274vA39BwqOJwpIgiGyogz3/iBzgoKXCTG8HW81qe2",
+      "username": "ashkan",
       "id": 3
-    },
-    {
-      "email": "tesdsst@gmail.com",
-      "password": "$2a$10$YWfd85RD2kuuyfw35sfbWuaGdWAsLOVXdFIG31Ge4LoSbhR8WlM8i",
-      "confirmPassword": "1234567",
-      "id": 4
-    },
-    {
-      "email": "taaest@gmail.com",
-      "password": "$2a$10$NX9RoBFM5Fqh1UiKGmK1nON0P/poLUn9mfOEYu/zXFNFSCvPOz.c6",
-      "confirmPassword": "",
-      "id": 5
-    },
-    {
-      "email": "terrrst@gmail.com",
-      "password": "$2a$10$0i69KS4TsLJsRC33TgY0bOwkszU9WxVa/SPlWXc8If/PTDdejg4hC",
-      "confirmPassword": "taaest@gmail.com",
-      "id": 6
-    },
-    {
-      "email": "s_admin@gmail.com",
-      "password": "$2a$10$xSBigWFrl4lOCS2mOI04xuTatB76dE0wfc7m3CC2.ia38mPSxQRdu",
-      "confirmPassword": "1111",
-      "id": 7
-    },
-    {
-      "email": "s_adddmin@gmail.com",
-      "password": "$2a$10$MvBAdTHTjL45ZkJdwt2tLeCfTG5QWGkz5nbcINHwlTERio3eSBl8m",
-      "confirmPassword": "1212",
-      "id": 8
-    },
-    {
-      "email": "s_admddin@gmail.com",
-      "password": "$2a$10$CbUUhU/8liBCLFiCK6tfxuZXwaUEljn975./jJZC.lrJJtGV1K9yu",
-      "confirmPassword": "1111",
-      "id": 9
     }
   ]
 }

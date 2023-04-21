@@ -9,7 +9,7 @@ export interface ChildsComponentsType {
 }
 
 export interface RegisterDataType {
-  confirmPassword: string;
+  confirmPassword?: string;
   email: string;
   password: string;
 }
@@ -43,4 +43,17 @@ export interface LoginHookFormType {
         };
       }
     | { errors: any };
+}
+
+export interface UserType {
+  userId: number;
+  accessToken: string;
+  email: string;
+  isLogedIn: boolean;
+  username: string;
+}
+
+export interface useUserActionsDispatchType {
+  type: string 
+  payload: UserType
 }

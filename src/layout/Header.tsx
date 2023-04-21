@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom"
+import { Link, useNavigate } from "react-router-dom"
 import {
   HomeIcon,
   PlusSmallIcon,
@@ -7,10 +7,20 @@ import {
   UserPlusIcon
 } from "@heroicons/react/24/outline";
 import { useLocation } from 'react-router-dom'
+import { useUser, useUserActions } from "../context/authContext/UserProvider";
+import { toast } from "react-toastify";
 
 const Header = () => {
-
+  const user = useUser()
   const location = useLocation()
+  const dispatch: any = useUserActions()
+  const navigate = useNavigate()
+
+  const logoutHandler = () => {
+    toast.success("loged out successfully")
+    dispatch({ type: "REMOVE_USER_DATA" })
+    navigate("/")
+  }
 
   return (
     <header className="bg-white shadow-md w-full">
@@ -22,28 +32,24 @@ const Header = () => {
               <HomeIcon className={`w-6 h-6 ${location.pathname === "/" ? "stroke-stone-800" : "stroke-stone-400"}`} />
             </Link>
           </li>
-          <li>
+          {user && <li>
             <Link to="/create-poster">
               <PlusSmallIcon className={`w-6 h-6 ${location.pathname === "/create-poster" ? "stroke-stone-800" : "stroke-stone-400"}`} />
             </Link>
-          </li>
-          <li>
+          </li>}
+          {!user && <li>
             <Link to="/register">
               <UserPlusIcon className={`w-6 h-6 ${location.pathname === "/register" ? "stroke-stone-800" : "stroke-stone-400"}`} />
             </Link>
-          </li>
-          <li>
+          </li>}
+          {!user && <li>
             <Link to="/login">
               <ArrowLeftOnRectangleIcon className={`w-6 h-6 ${location.pathname === "/login" ? "stroke-stone-800" : "stroke-stone-400"}`} />
             </Link>
-          </li>
-          <li
-            className="hidden"
-          >
-            <Link to="#">
-              <ArrowRightOnRectangleIcon className="w-6 h-6 stroke-red-500" />
-            </Link>
-          </li>
+          </li>}
+          {user && <li className="cursor-pointer" onClick={logoutHandler}>
+            <ArrowRightOnRectangleIcon className="w-6 h-6 stroke-red-500" />
+          </li>}
         </ul>
       </nav>
     </header>

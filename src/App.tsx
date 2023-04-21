@@ -3,15 +3,18 @@ import Layout from "./layout/Layout";
 import routes from "./routes";
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import UserProvider from "./context/authContext/UserProvider";
 
 function App() {
   return (
-    <Layout>
-      <Routes>
-        {routes.map((route, index) => <Route key={index} {...route} />)}
-      </Routes>
+    <UserProvider>
+      <Layout>
+        <Routes>
+          {routes.map((route, index) => <Route key={index} {...route} />)}
+        </Routes>
         <ToastContainer />
-    </Layout>
+      </Layout>
+    </UserProvider>
   );
 }
 

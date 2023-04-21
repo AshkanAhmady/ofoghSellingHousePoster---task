@@ -2,6 +2,10 @@ import { useForm } from "react-hook-form";
 import * as Yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { LoginHookFormType, RegisterDataType } from "../../types";
+import { userLogin } from "../../actions/authActions";
+import { useNavigate } from "react-router";
+import { useUserActions } from "../../context/authContext/UserProvider";
+import { toast } from "react-toastify";
 
 const formSchema = Yup.object().shape({
     email: Yup.string()
@@ -12,16 +16,15 @@ const formSchema = Yup.object().shape({
 });
 
 const LoginPage = () => {
+    const dispatch: any = useUserActions()
+    const navigate = useNavigate()
     const { register, handleSubmit, formState: { errors } }: LoginHookFormType = useForm({ mode: "onTouched", resolver: yupResolver(formSchema) });
     const onSubmit = (data: RegisterDataType) => {
-        console.log(data)
-        // fetch('http://localhost:4000/login', {
-        //     method: 'POST',
-        //     headers: {'Content-Type' : 'application/json'},
-        //     body: JSON.stringify(formData)
-        // })
-        // .then(res => res.json())
-        // .then(data => console.log(data.user))
+        userLogin(data).then((data) => {
+            toast.success("loged in successfully")
+            dispatch({ type: "SAVE_USER_DATA", payload: data });
+            navigate("/")
+        })
     };
 
 
