@@ -7,6 +7,7 @@ import { useNavigate } from "react-router";
 import { useUserActions } from "../../context/authContext/UserProvider";
 import { toast } from "react-toastify";
 import { saveUserData } from "actions/actions";
+import Input from "components/Input";
 
 const formSchema = Yup.object().shape({
     email: Yup.string()
@@ -28,35 +29,26 @@ const LoginPage = () => {
         })
     };
 
-
     return (<div className="mt-6 flex justify-center">
         <form onSubmit={handleSubmit(onSubmit)} className="bg-white rounded-xl shadow-lg flex flex-col w-full md:w-[40%] p-3">
             <h1 className="text-2xl text-center">ورود</h1>
             <hr className="my-4" />
-            <label className="text-stone-500 font-medium" htmlFor="email">
-                ایمیل
-            </label>
-            <input
-                placeholder="ایمیل خود را وارد کنید..."
-                className="bg-transparent placeholder:text-stone-400 outline-none border border-stone-300 rounded px-2 py-1 mt-1"
-                {...register("email")}
-                name="email"
+            <Input
+                label="ایمیل"
                 type="email"
-                id="email"
+                name="email"
+                placeholder="ایمیل خود را وارد کنید..."
+                error={errors.email?.message}
+                validation={{ ...register("email") }}
             />
-            <span className="text-red-500 text-xs py-1">{errors.email?.message}</span>
-            <label className="text-stone-500 font-medium mt-4" htmlFor="password">
-                رمز عبور
-            </label>
-            <input
-                placeholder="رمز خود را وارد کنید..."
-                className="bg-transparent placeholder:text-stone-400 outline-none border border-stone-300 rounded px-2 py-1 mt-1"
-                {...register("password")}
-                name="password"
+            <Input
+                label="رمز عبور"
                 type="password"
-                id="password"
+                name="password"
+                placeholder="رمز خود را وارد کنید..."
+                error={errors.password?.message}
+                validation={{ ...register("password") }}
             />
-            <span className="text-red-500 text-xs py-1">{errors.password?.message}</span>
             <div className="w-full flex gap-4 mt-4">
                 <input
                     className="bg-blue-600 cursor-pointer flex-auto text-white px-7 py-1 rounded-md"

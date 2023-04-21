@@ -20,9 +20,9 @@ export const IsGuest = ({ children }: any) => {
 }
 
 
-
 const routes = [
-  { path: "/poster/:id", element: <IsAuthed><SinglePosterPage /></IsAuthed> },
+  { path: "/poster/edit/:id", element: <IsAuthed><SinglePosterPage /></IsAuthed> },
+  { path: "/poster/:id", element: <SinglePosterPage /> },
   { path: "/create-poster", element: <IsAuthed><CreatePoster /></IsAuthed> },
   { path: "/login", element: <IsGuest><LoginPage /></IsGuest> },
   { path: "/register", element: <IsGuest><RegisterPage /></IsGuest> },

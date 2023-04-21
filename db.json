@@ -24,6 +24,24 @@
       "password": "$2a$10$zODQZ9hg4/Ryi7RMpXw9RubnYIk/AyqfJ1ywuoh.aRI29SB9KOZyS",
       "username": "yashar",
       "id": 4
+    },
+    {
+      "email": "s_admin@gmail.com",
+      "password": "$2a$10$iKlY0eHy.OHsxu8zqrgqnuf8DknXWAPcf2RB92YzoTtNw8pzT/8Xi",
+      "username": "s_admin@gmail.com",
+      "id": 5
+    },
+    {
+      "email": "s_asdmin@gmail.com",
+      "password": "$2a$10$pVOnWvOaj8eruT330sy8M.d8LUMyFe3epAsPLR5wv/fszhyXsbaLS",
+      "username": "s_admin@gmail.com",
+      "id": 6
+    },
+    {
+      "email": "sds@d.j",
+      "password": "$2a$10$vuqsXpfo.IJ5TG5I5CVO5.ce.4TVgOXpX4LVIYOcoWeuNp.vTUSzW",
+      "username": "sdsd",
+      "id": 7
     }
   ]
 }

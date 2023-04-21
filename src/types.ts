@@ -56,3 +56,12 @@ export interface useUserActionsDispatchType {
   type: string;
   payload: UserType;
 }
+
+export interface InputPropsType {
+  label: string;
+  name: string;
+  type: string;
+  placeholder: string;
+  error: string;
+  validation: any;
+}
