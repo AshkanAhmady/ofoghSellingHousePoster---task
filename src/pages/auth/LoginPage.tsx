@@ -2,12 +2,12 @@ import { useForm } from "react-hook-form";
 import * as Yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { LoginHookFormType, RegisterDataType } from "../../types";
-import { userLogin } from "../../actions/authActions";
 import { useNavigate } from "react-router";
-import { useUserActions } from "../../context/authContext/UserProvider";
 import { toast } from "react-toastify";
-import { saveUserData } from "actions/actions";
+import { saveUserData } from "requests/auth/actions";
 import Input from "components/Input";
+import { useUserActions } from "context/authContext/UserProvider";
+import { userLogin } from "requests/auth/authRequests";
 
 const formSchema = Yup.object().shape({
     email: Yup.string()
@@ -23,7 +23,7 @@ const LoginPage = () => {
     const { register, handleSubmit, formState: { errors } }: LoginHookFormType = useForm({ mode: "onTouched", resolver: yupResolver(formSchema) });
     const onSubmit = (data: RegisterDataType) => {
         userLogin(data).then((data) => {
-            toast.success("loged in successfully")
+            toast.success("ورود با موفقیت انجام شد")
             dispatch(saveUserData(data));
             navigate("/")
         })

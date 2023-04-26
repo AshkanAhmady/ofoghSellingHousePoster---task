@@ -1,4 +1,4 @@
-import request from "../Configs/request";
+import request from "Configs/request";
 
 export const userRegister = async (body: any) => {
   return await request.post("/users", body).then((data: any) => {

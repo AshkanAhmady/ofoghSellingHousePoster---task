@@ -65,3 +65,31 @@ export interface InputPropsType {
   error: string;
   validation: any;
 }
+
+export interface SinglePosterType {
+  lat: number;
+  long: number;
+  description: string;
+  mobileNumber: string;
+  address: string;
+  id: number;
+}
+
+export interface PosterListType {
+  data: Array<SinglePosterType>;
+}
+
+export interface CreatePosterType {
+  description: string;
+  homeDesc: string;
+  lastName: string;
+  name: string;
+  phoneNumber: string;
+  address?: string;
+  mapInfo?: any;
+}
+
+export interface MapLocationType {
+  lat: number;
+  lng: number;
+}

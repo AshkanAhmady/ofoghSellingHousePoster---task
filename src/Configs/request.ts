@@ -1,4 +1,4 @@
-import http from "./constants/config";
+import http from "./constants/httpConfig";
 
 class Request {
   get(url: string) {

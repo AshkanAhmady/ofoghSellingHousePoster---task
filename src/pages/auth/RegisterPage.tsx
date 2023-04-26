@@ -1,13 +1,13 @@
 import { useForm } from "react-hook-form";
 import * as Yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
-import { RegisterHookFormType, RegisterDataType } from "../../types";
-import { userRegister } from "../../actions/authActions";
 import { toast } from "react-toastify";
-import { useUserActions } from "../../context/authContext/UserProvider";
 import { useNavigate } from "react-router";
-import { saveUserData } from "actions/actions";
+import { saveUserData } from "requests/auth/actions";
 import Input from "components/Input";
+import { useUserActions } from "context/authContext/UserProvider";
+import { RegisterDataType, RegisterHookFormType } from "types";
+import { userRegister } from "requests/auth/authRequests";
 
 const formSchema = Yup.object().shape({
     username: Yup.string()
@@ -31,7 +31,7 @@ const RegisterPage = () => {
     const onSubmit = (data: RegisterDataType) => {
         delete data['confirmPassword']
         userRegister(data).then((data) => {
-            toast.success("registered successfully")
+            toast.success("ثبت نام با موفقیت انجام شد")
             dispatch(saveUserData(data))
             navigate("/")
         })

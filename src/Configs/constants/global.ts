@@ -1,5 +1,12 @@
+// USER
 export const SAVE_USER_DATA = "SAVE_USER_DATA";
 export const REMOVE_USER_DATA = "REMOVE_USER_DATA";
 
+//POSTER
+export const SAVE_POSTERS = "SAVE_POSTERS";
+export const REMOVE_POSTERS = "REMOVE_POSTERS";
+export const SAVE_NEW_POSTER = "SAVE_NEW_POSTER";
+
 // STORAGES
 export const USER_DATA = "USER_DATA";
+export const POSTERS_DATA = "POSTERS_DATA";

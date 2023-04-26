@@ -1,5 +1,32 @@
 {
-  "posters": [],
+  "posters": [
+    {
+      "name": "اشکان",
+      "lastName": "احمدی",
+      "phoneNumber": "09184174117",
+      "homeDesc": "خانه دوبلکس دو طبقه 180 متر 4 خوابه",
+      "description": "",
+      "location": {
+        "lat": 35.67786660262535,
+        "lng": 51.39159457518
+      },
+      "address": "استان تهران، تهران، مخصوص، کارگر جنوبی، آقابالازاده، چهارم جنوبی",
+      "id": 1
+    },
+    {
+      "name": "حشمت",
+      "lastName": "محمدی",
+      "phoneNumber": "09154477885",
+      "homeDesc": "خانه 170 متری. سه خوابه",
+      "description": "",
+      "location": {
+        "lat": 35.69599201166759,
+        "lng": 51.37200228703574
+      },
+      "address": "استان تهران، تهران، سلسبیل شمالی، خوش جنوبی، مختاری",
+      "id": 2
+    }
+  ],
   "users": [
     {
       "email": "sdf@g.f",
@@ -42,6 +69,12 @@
       "password": "$2a$10$vuqsXpfo.IJ5TG5I5CVO5.ce.4TVgOXpX4LVIYOcoWeuNp.vTUSzW",
       "username": "sdsd",
       "id": 7
+    },
+    {
+      "email": "ashkfan@gmail.com",
+      "password": "$2a$10$GJ8Z/egwQ.Ro.Kp2qe9awuE3TO3bEbyJ6oFB4iwnQqMr8EoypYR5.",
+      "username": "یبیب",
+      "id": 8
     }
   ]
 }

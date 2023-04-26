@@ -7,8 +7,8 @@ import {
   UserPlusIcon
 } from "@heroicons/react/24/outline";
 import { useLocation } from 'react-router-dom'
-import { useUser, useUserActions } from "../context/authContext/UserProvider";
 import { toast } from "react-toastify";
+import { useUser, useUserActions } from "context/authContext/UserProvider";
 
 const Header = () => {
   const user = useUser()
@@ -17,7 +17,7 @@ const Header = () => {
   const navigate = useNavigate()
 
   const logoutHandler = () => {
-    toast.success("loged out successfully")
+    toast.success("با موفقیت از حساب کاربری خود خارج شدید")
     dispatch({ type: "REMOVE_USER_DATA" })
     navigate("/")
   }
