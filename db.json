@@ -1,20 +1,5 @@
 {
-  "posters": [
-    {
-      "name": "zdfsdf",
-      "lastName": "sdfdsf",
-      "phoneNumber": "4564",
-      "homeDesc": "sdfds",
-      "description": "sdfds",
-      "location": {
-        "lat": 35.72644736208901,
-        "lng": 51.38237924343235
-      },
-      "address": "استان تهران، تهران، کوی نصر، بزرگراه شهید چمران",
-      "userId": 5,
-      "id": 1
-    }
-  ],
+  "posters": [],
   "users": [
     {
       "email": "sdf@g.f",
