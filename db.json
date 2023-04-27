@@ -1,18 +1,18 @@
 {
   "posters": [
     {
-      "name": "اشکان",
-      "lastName": "احمدی",
-      "phoneNumber": "3464",
-      "homeDesc": "sdfs",
-      "description": "",
+      "name": "zdfsdf",
+      "lastName": "sdfdsf",
+      "phoneNumber": "4564",
+      "homeDesc": "sdfds",
+      "description": "sdfds",
       "location": {
-        "lat": 35.71884332617166,
-        "lng": 51.39313101768494
+        "lat": 35.72644736208901,
+        "lng": 51.38237924343235
       },
-      "address": "استان تهران، تهران، فاطمی، کارگر شمالی، خسروی، پریان",
+      "address": "استان تهران، تهران، کوی نصر، بزرگراه شهید چمران",
       "userId": 5,
-      "id": 2
+      "id": 1
     }
   ],
   "users": [
@@ -63,6 +63,12 @@
       "password": "$2a$10$GJ8Z/egwQ.Ro.Kp2qe9awuE3TO3bEbyJ6oFB4iwnQqMr8EoypYR5.",
       "username": "یبیب",
       "id": 8
+    },
+    {
+      "email": "asd@gmail.com",
+      "password": "$2a$10$9OtrtaKYbRJFKVM8EzCRV.gkYG84Uj5OSAzvWS6IHwyQcqMY8GnCi",
+      "username": "s_admin@gmail.com",
+      "id": 9
     }
   ]
 }

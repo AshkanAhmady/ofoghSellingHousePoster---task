@@ -38,9 +38,9 @@ const CreatePoster = () => {
     }
 
     return (<div className="mt-6 flex justify-center">
-        <form onSubmit={handleSubmit(onSubmit)} className="bg-white rounded-xl shadow-lg flex flex-col w-full md:w-[40%] p-3">
+        <form onSubmit={handleSubmit(onSubmit)} className="bg-white dark:text-white dark:bg-gray-800 duration-150 dark:shadow-gray-900 rounded-xl shadow-lg flex flex-col w-full md:w-[40%] p-3">
             <h1 className="text-2xl text-center">ثبت آگهی</h1>
-            <hr className="my-4" />
+            <hr className="my-4 duration-150 dark:border-black" />
             <Input
                 label="نام"
                 type="text"
@@ -70,14 +70,14 @@ const CreatePoster = () => {
             </label>
             <textarea  {...register("homeDesc")} placeholder="مشخصات خانه را وارد کنید" name="homeDesc" rows={3} className="bg-transparent placeholder:text-stone-400 outline-none border border-stone-300 rounded px-2 py-1 mt-1" />
             <span className="text-red-500 text-xs py-1">{errors.homeDesc?.message}</span>
-            <span className="text-stone-500 text-xs pt-3">برای ثبت آدرس، موقعیت مکانی خود را روی نقشه تعیین کنید</span>
+            <span className="text-stone-500 dark:text-white duration-150 text-xs pt-3">برای ثبت آدرس، موقعیت مکانی خود را روی نقشه تعیین کنید</span>
             <div className="pt-2 h-[300px] w-full min-h-[30px]">
                 <MapComponent location={{
                     lat: 35.715298,
                     lng: 51.404343,
                 }} zoom={10} isZoomable={true} isDrageble={true} setLocation={setLocation} />
             </div>
-            <span className={`text-md ${location.validLocation ? "text-stone-500" : "text-red-500"}`}>{location.address}</span>
+            <span className={`dark:text-white duration-150 text-md ${location.validLocation ? "text-black" : "text-red-500"}`}>{location.address}</span>
             <label className="text-stone-500 font-medium mt-3" htmlFor="description">
                 توضیحات
             </label>

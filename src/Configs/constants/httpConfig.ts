@@ -22,6 +22,8 @@ http.interceptors.response.use(
           ? "رمز ورود اشتباه است"
           : response.data === "Email already exists"
           ? "کاربری با این ایمیل قبلا ثبت نام کرده است"
+          : response.data === "Password is too short"
+          ? "رمز ورود اشتباه است"
           : response.data;
       toast.error(`${message}`);
     }

@@ -14,7 +14,7 @@ const formSchema = Yup.object().shape({
     homeDesc: Yup.string().required("مشخصات خانه را وارد کنید")
 });
 
-export default function UpdatePosterModal({ setPoster, setLoading, showUpdateModal, setShowUpdateModal, poster }: any) {
+export default function UpdatePosterModal({ setLoading, showUpdateModal, setShowUpdateModal, poster }: any) {
     const user = useUser()
     const { register, handleSubmit, formState: { errors } }: any = useForm({ mode: "onTouched", defaultValues: poster, resolver: yupResolver(formSchema) });
     const [location, setLocation] = useState({
@@ -37,10 +37,10 @@ export default function UpdatePosterModal({ setPoster, setLoading, showUpdateMod
             toast.warning("آدرس خود را به کمک نقشه وارد کنید")
         } else {
             setLoading(true)
-            updateSinglePoster(poster.id, { ...data, location: location.latLong, address: location.address, userId: user?.userId }).then((data) => {
+            updateSinglePoster(poster.id, { ...data, location: location.latLong, address: location.address, userId: user?.userId }).then(() => {
                 setLoading(false)
                 setShowUpdateModal(false);
-                setPoster(data);
+                toast.success("آگهی با موفقیت ویرایش شد")
             })
         }
     }
@@ -54,9 +54,9 @@ export default function UpdatePosterModal({ setPoster, setLoading, showUpdateMod
                     >
                         <div className="relative w-[400px] my-7 mt-[270px]">
                             {/*content*/}
-                            <div className="border-0 rounded-lg shadow-lg relative flex flex-col w-full bg-white outline-none focus:outline-none">
+                            <div className="border-0 rounded-lg shadow-lg relative flex flex-col w-full bg-white dark:bg-gray-800 duration-150 dark:shadow-gray-900 dark:text-white outline-none focus:outline-none">
                                 {/*header*/}
-                                <div className="flex items-start justify-between p-5 border-b border-solid border-slate-200 rounded-t">
+                                <div className="flex items-start justify-between p-5 rounded-t">
                                     <h3 className="text-xl font-semibold">
                                         ویرایش آگهی
                                     </h3>
@@ -101,11 +101,11 @@ export default function UpdatePosterModal({ setPoster, setLoading, showUpdateMod
                                         </label>
                                         <textarea  {...register("homeDesc")} placeholder="مشخصات خانه را وارد کنید" name="homeDesc" rows={3} className="bg-transparent placeholder:text-stone-400 outline-none border border-stone-300 rounded px-2 py-1 mt-1" />
                                         <span className="text-red-500 text-xs py-1">{errors.homeDesc?.message}</span>
-                                        <span className="text-stone-500 text-xs pt-3">برای ثبت آدرس، موقعیت مکانی خود را روی نقشه تعیین کنید</span>
+                                        <span className="text-stone-500 dark:text-white duration-150 text-xs pt-3">برای ثبت آدرس، موقعیت مکانی خود را روی نقشه تعیین کنید</span>
                                         <div className="pt-2 h-[250px] w-full min-h-[30px]">
                                             <MapComponent location={poster.location} zoom={17} isZoomable={true} isDrageble={true} setLocation={setLocation} />
                                         </div>
-                                        <span className={`text-md ${location.validLocation ? "text-stone-500" : "text-red-500"}`}>{location.address}</span>
+                                        <span className={`dark:text-white duration-150 text-md ${location.validLocation ? "text-black" : "text-red-500"}`}>{location.address}</span>
                                         <label className="text-stone-500 font-medium mt-3" htmlFor="description">
                                             توضیحات
                                         </label>

@@ -40,12 +40,12 @@ const SinglePosterPage = () => {
     return (
         <div className="mt-6 flex flex-col items-center justify-center">
             <div className="w-full flex justify-end">
-                <button onClick={() => navigate("/")} className="bg-white flex justify-center gap-2 text-stone-600 font-light uppercase text-sm px-4 py-2 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150">
+                <button onClick={() => navigate("/")} className="bg-white dark:bg-gray-800 flex justify-center gap-2 text-stone-600 dark:text-white font-light uppercase text-sm px-4 py-2 rounded shadow dark:shadow-gray-800 hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150">
                     <span>بازگشت</span>
                     <ArrowLeftIcon className="w-4 h-4" />
                 </button>
             </div>
-            <div className="bg-white rounded-xl shadow-lg flex gap-4 flex-col w-full md:w-[40%] p-4">
+            <div className="bg-white dark:text-white dark:bg-gray-800 dark:shadow-gray-900 duration-150 rounded-xl shadow-lg flex gap-4 flex-col w-full md:w-[40%] p-4">
                 <div className="w-[100%] gap-1 flex flex-col min-h-[30px]">
                     <div className="flex gap-2 items-start">
                         <h1 className="font-bold tex-md">مشخصات خانه:</h1>
@@ -79,7 +79,7 @@ const SinglePosterPage = () => {
 
             </div>
             <DeletePosterModal onDelete={confilrmDelete} showDeleteModal={showDeleteModal} setShowDeleteModal={setShowDeleteModal} />
-            <UpdatePosterModal setPoster={setPoster} setLoading={setLoading} poster={poster} showUpdateModal={showUpdateModal} setShowUpdateModal={setShowUpdateModal} />
+            <UpdatePosterModal setLoading={setLoading} poster={poster} showUpdateModal={showUpdateModal} setShowUpdateModal={setShowUpdateModal} />
         </div>
     );
 }

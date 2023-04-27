@@ -30,9 +30,9 @@ const LoginPage = () => {
     };
 
     return (<div className="mt-6 flex justify-center">
-        <form onSubmit={handleSubmit(onSubmit)} className="bg-white rounded-xl shadow-lg flex flex-col w-full md:w-[40%] p-3">
+        <form onSubmit={handleSubmit(onSubmit)} className="bg-white dark:text-white dark:bg-gray-800 duration-150 dark:shaow-gray900 rounded-xl shadow-lg flex flex-col w-full md:w-[40%] p-3">
             <h1 className="text-2xl text-center">ورود</h1>
-            <hr className="my-4" />
+            <hr className="my-4 duration-150 dark:border-black" />
             <Input
                 label="ایمیل"
                 type="email"
