@@ -35,3 +35,9 @@ export const getSinglePoster = async (id: string | undefined) => {
     return data;
   });
 };
+
+export const deleteSinglePoster = async (id: string | undefined) => {
+  return await request.delete(`/posters/${id}`).then((data: any) => {
+    return data;
+  });
+};

@@ -13,8 +13,8 @@ class Request {
     return http.put(url, data);
   }
 
-  delete(url: string, data: any) {
-    return http.delete(url, data);
+  delete(url: string) {
+    return http.delete(url);
   }
 }
 

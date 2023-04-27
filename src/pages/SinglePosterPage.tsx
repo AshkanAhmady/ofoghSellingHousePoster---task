@@ -1,18 +1,20 @@
+import DeletePosterModal from "components/DeleteDialog";
 import Loading from "components/Loading";
 import MapComponent from "components/MapComponent";
 import { useUser } from "context/authContext/UserProvider";
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
-import { getSinglePoster } from "requests/poster/posterRequests";
+import { useNavigate, useParams } from "react-router-dom";
+import { toast } from "react-toastify";
+import { deleteSinglePoster, getSinglePoster } from "requests/poster/posterRequests";
 import { PosterType } from "types";
 
 const SinglePosterPage = () => {
     const { id } = useParams()
     const [poster, setPoster] = useState<PosterType | null>(null)
+    const [showDeleteModal, setShowDeleteModal] = useState(false);
     const [loading, setLoading] = useState(false)
     const user = useUser()
-
-    console.log(user)
+    const navigate = useNavigate()
 
     useEffect(() => {
         setLoading(true)
@@ -22,7 +24,12 @@ const SinglePosterPage = () => {
         })
     }, [id])
 
-    console.log(poster)
+    const confilrmDelete = () => {
+        deleteSinglePoster(poster?.id).then(() => {
+            toast.success("آگهی با موفقیت حذف شد")
+            navigate("/")
+        })
+    }
 
     if (loading) return <Loading />
     return (
@@ -56,10 +63,11 @@ const SinglePosterPage = () => {
                 {user?.userId === poster?.userId && <div className="w-full flex gap-2">
                     <button className="border border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white flex-1 cursor-pointer  px-7 py-1 rounded-md"
                     >ویرایش</button>
-                    <button className="border border-red-600 text-red-600 hover:bg-red-600 hover:text-white flex-1 cursor-pointer px-7 py-1 rounded-md">حذف</button>
+                    <button onClick={() => setShowDeleteModal(true)} className="border border-red-600 text-red-600 hover:bg-red-600 hover:text-white flex-1 cursor-pointer px-7 py-1 rounded-md">حذف</button>
                 </div>}
 
             </div>
+            <DeletePosterModal onDelete={confilrmDelete} showDeleteModal={showDeleteModal} setShowDeleteModal={setShowDeleteModal} />
         </div>
     );
 }

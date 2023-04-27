@@ -88,6 +88,7 @@ export interface PosterType {
   address?: string;
   location?: { lat: number; lng: number };
   userId: number;
+  id: string | undefined;
 }
 
 export interface MapLocationType {

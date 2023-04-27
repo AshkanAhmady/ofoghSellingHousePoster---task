@@ -46,7 +46,7 @@ export default function MapComponent({
   }
 
   return (
-    <div className="map-root h-[100%] flex flex-col justify-between relative">
+    <div className="map-root h-[100%] flex flex-col z-[1] justify-between relative">
       <MapContainer
         style={{ width: "100%", height: "100%" }}
         center={location || center}
@@ -59,7 +59,7 @@ export default function MapComponent({
           getLocation={getLocation}
         />
       </MapContainer>
-      <div className="flex justify-center items-center w-[50px] h-[50px] absolute top-[50%] left-[50%] translate-y-[-50%] translate-x-[-50%] z-[1000]">
+      <div className="flex justify-center items-center w-[50px] h-[50px] absolute top-[50%] left-[50%] translate-y-[-50%] translate-x-[-50%] z-[400]">
         <img className="mt-[-35px]" alt="mapLocation" src={mapLocation} />
       </div>
     </div>

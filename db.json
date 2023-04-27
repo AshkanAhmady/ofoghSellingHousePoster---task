@@ -1,20 +1,5 @@
 {
-  "posters": [
-    {
-      "name": "xgdsdg",
-      "lastName": "sdfgdfg",
-      "phoneNumber": "546",
-      "homeDesc": "xfgd",
-      "description": "zdfs",
-      "location": {
-        "lat": 35.73090666520056,
-        "lng": 51.38099670410157
-      },
-      "address": "استان تهران، تهران، کوی نصر، بزرگراه جلال آل احمد، ناظریان قمی، نوزدهم-شهید پوربافرانی",
-      "userId": 5,
-      "id": 1
-    }
-  ],
+  "posters": [],
   "users": [
     {
       "email": "sdf@g.f",
