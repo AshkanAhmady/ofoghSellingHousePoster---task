@@ -79,14 +79,15 @@ export interface PosterListType {
   data: Array<SinglePosterType>;
 }
 
-export interface CreatePosterType {
+export interface PosterType {
   description: string;
   homeDesc: string;
   lastName: string;
   name: string;
   phoneNumber: string;
   address?: string;
-  mapInfo?: any;
+  location?: { lat: number; lng: number };
+  userId: number;
 }
 
 export interface MapLocationType {

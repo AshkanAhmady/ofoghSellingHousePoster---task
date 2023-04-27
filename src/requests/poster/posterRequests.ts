@@ -8,7 +8,6 @@ export const getPosterList = async () => {
 };
 
 export const getAddressFromLatLng = (location: MapLocationType) => {
-  console.log(location);
   let myHeaders = new Headers();
   myHeaders.append("Api-Key", "service.0906cb8f5bb342a6baa504f9eac27983");
 
@@ -27,6 +26,12 @@ export const getAddressFromLatLng = (location: MapLocationType) => {
 export const saveNewPoster = async (data: any) => {
   console.log(data);
   return await request.post("/posters", data).then((data: any) => {
+    return data;
+  });
+};
+
+export const getSinglePoster = async (id: string | undefined) => {
+  return await request.get(`/posters/${id}`).then((data: any) => {
     return data;
   });
 };

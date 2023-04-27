@@ -15,14 +15,14 @@ http.interceptors.response.use(
   (error: AxiosError) => {
     const { response } = error;
     if (response) {
-      let message: string =
+      let message: string | any =
         response.data === "Cannot find user"
           ? "کاربری با این ایمیل یافت نشد"
           : response.data === "Incorrect password"
           ? "رمز ورود اشتباه است"
           : response.data === "Email already exists"
           ? "کاربری با این ایمیل قبلا ثبت نام کرده است"
-          : "";
+          : response.data;
       toast.error(`${message}`);
     }
   }

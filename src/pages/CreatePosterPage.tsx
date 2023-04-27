@@ -1,12 +1,13 @@
 import { yupResolver } from "@hookform/resolvers/yup";
 import Input from "components/Input";
 import MapComponent from "components/MapComponent";
+import { useUser } from "context/authContext/UserProvider";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router";
 import { toast } from "react-toastify";
 import { saveNewPoster } from "requests/poster/posterRequests";
-import { CreatePosterType, LoginHookFormType } from "types";
+import { PosterType, LoginHookFormType } from "types";
 import * as Yup from "yup";
 
 const formSchema = Yup.object().shape({
@@ -16,6 +17,7 @@ const formSchema = Yup.object().shape({
 });
 
 const CreatePoster = () => {
+    const user = useUser()
     const Navigate = useNavigate()
     const [location, setLocation] = useState({
         address: "",
@@ -24,11 +26,11 @@ const CreatePoster = () => {
     })
     const { register, handleSubmit, formState: { errors } }: LoginHookFormType = useForm({ mode: "onTouched", resolver: yupResolver(formSchema) });
 
-    const onSubmit = (data: CreatePosterType) => {
+    const onSubmit = (data: PosterType) => {
         if (!location.validLocation) {
             toast.warning("آدرس خود را به کمک نقشه وارد کنید")
         } else {
-            saveNewPoster({ ...data, location: location.latLong, address: location.address }).then((data) => {
+            saveNewPoster({ ...data, location: location.latLong, address: location.address, userId: user?.userId }).then((data) => {
                 toast.success("آگهی با موفقیت ایجاد شد")
                 Navigate("/")
             })
@@ -70,7 +72,10 @@ const CreatePoster = () => {
             <span className="text-red-500 text-xs py-1">{errors.homeDesc?.message}</span>
             <span className="text-stone-500 text-xs pt-3">برای ثبت آدرس، موقعیت مکانی خود را روی نقشه تعیین کنید</span>
             <div className="pt-2 h-[300px] w-full min-h-[30px]">
-                <MapComponent setLocation={setLocation} />
+                <MapComponent location={{
+                    lat: 35.715298,
+                    lng: 51.404343,
+                }} zoom={10} isZoomable={true} isDrageble={true} setLocation={setLocation} />
             </div>
             <span className={`text-md ${location.validLocation ? "text-stone-500" : "text-red-500"}`}>{location.address}</span>
             <label className="text-stone-500 font-medium mt-3" htmlFor="description">

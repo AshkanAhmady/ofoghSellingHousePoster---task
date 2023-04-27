@@ -19,7 +19,7 @@ const PosterListPage = () => {
     return (
         <div className="flex flex-wrap gap-5">
             {posters?.data.length ? posters!.data.map((poster) => {
-                return <Poster poster={poster} />
+                return <Poster key={poster.id} poster={poster} />
             }) : <h1>در حال حاظر هیچ آگهی ای ثبت نشده است</h1>}
 
         </div>
