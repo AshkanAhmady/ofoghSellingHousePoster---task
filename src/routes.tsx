@@ -6,7 +6,6 @@ import NotFound from "./pages/NotFoundPage";
 import CreatePoster from "./pages/CreatePosterPage";
 import { Navigate } from "react-router";
 import { useUser } from "context/authContext/UserProvider";
-import EditPosterPage from "pages/EditPosterPage";
 
 
 export const IsAuthed = ({ children }: any) => {
@@ -22,13 +21,12 @@ export const IsGuest = ({ children }: any) => {
 
 
 const routes = [
-  { path: "/poster/edit/:id", element: <IsAuthed><EditPosterPage /></IsAuthed> },
   { path: "/poster/:id", element: <SinglePosterPage /> },
   { path: "/create-poster", element: <IsAuthed><CreatePoster /></IsAuthed> },
   { path: "/login", element: <IsGuest><LoginPage /></IsGuest> },
   { path: "/register", element: <IsGuest><RegisterPage /></IsGuest> },
   { path: "/", element: <PosterListPage /> },
-  { component: <NotFound /> },
+  { path: '*', element: <NotFound /> },
 ];
 
 export default routes;

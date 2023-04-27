@@ -1,5 +1,20 @@
 {
-  "posters": [],
+  "posters": [
+    {
+      "name": "اشکان",
+      "lastName": "احمدی",
+      "phoneNumber": "3464",
+      "homeDesc": "sdfs",
+      "description": "",
+      "location": {
+        "lat": 35.71884332617166,
+        "lng": 51.39313101768494
+      },
+      "address": "استان تهران، تهران، فاطمی، کارگر شمالی، خسروی، پریان",
+      "userId": 5,
+      "id": 2
+    }
+  ],
   "users": [
     {
       "email": "sdf@g.f",

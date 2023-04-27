@@ -1,5 +1,5 @@
 import request from "Configs/request";
-import { MapLocationType } from "types";
+import { MapLocationType, PosterType } from "types";
 
 export const getPosterList = async () => {
   return await request.get("/posters").then((data: any) => {
@@ -32,6 +32,15 @@ export const saveNewPoster = async (data: any) => {
 
 export const getSinglePoster = async (id: string | undefined) => {
   return await request.get(`/posters/${id}`).then((data: any) => {
+    return data;
+  });
+};
+
+export const updateSinglePoster = async (
+  id: string | undefined,
+  poster: PosterType
+) => {
+  return await request.put(`/posters/${id}`, poster).then((data: any) => {
     return data;
   });
 };
